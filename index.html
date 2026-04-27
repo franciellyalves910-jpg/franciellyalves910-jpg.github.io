@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brás App - Aplicativo de Lojistas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .logo h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 40px 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 30px;
+            background-color: #f0f4ff;
+            border-radius: 10px;
+        }
+
+        .hero h2 {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        /* Features Section */
+        .features {
+            margin-bottom: 50px;
+        }
+
+        .features h3 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .feature-card {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h4 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* Download Section */
+        .download {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .download h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .download-info {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-download:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .android-icon {
+            font-size: 1.3em;
+        }
+
+        .version-info {
+            font-size: 0.9em;
+            opacity: 0.8;
+        }
+
+        /* Info Section */
+        .info {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .info h3 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .info-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .info-label {
+            display: block;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .info-item p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 0.95em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .logo h1 {
+                font-size: 2em;
+            }
+
+            .hero h2 {
+                font-size: 1.5em;
+            }
+
+            .features h3,
+            .info h3 {
+                font-size: 1.5em;
+            }
+
+            .download h3 {
+                font-size: 1.5em;
+            }
+
+            .features-grid,
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .download,
+            .info {
+                padding: 25px;
+            }
+
+            .btn-download {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 25px 15px;
+            }
+
+            .logo h1 {
+                font-size: 1.5em;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+            }
+
+            .hero {
+                padding: 20px;
+            }
+
+            .hero h2 {
+                font-size: 1.3em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>Brás App</h1>
+                <p class="subtitle">Seu aplicativo de lojistas</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>Bem-vindo ao Brás App</h2>
+                    <p>Acesse os melhores lojistas, catálogo atualizado e informações de contato em um único lugar.</p>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="features">
+                <h3>O que você encontra no app:</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h4>Acesso a Lojistas</h4>
+                        <p>Encontre todos os lojistas cadastrados com informações completas</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📦</div>
+                        <h4>Catálogo Atualizado</h4>
+                        <p>Consulte sempre os produtos e promoções mais recentes</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📞</div>
+                        <h4>Contato Direto</h4>
+                        <p>Telefone e endereço de todos os estabelecimentos</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download Section -->
+            <section class="download">
+                <h3>Baixe agora o Brás App</h3>
+                <p class="download-info">Disponível apenas para Android</p>
+                <a href="#" class="btn-download">
+                    <span class="android-icon">🤖</span>
+                    Baixar no Google Play
+                </a>
+                <p class="version-info">Versão 1.0 • Compatível com Android 8.0+</p>
+            </section>
+
+            <!-- Info Section -->
+            <section class="info">
+                <h3>Informações de Contato</h3>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <span class="info-label">📍 Endereço:</span>
+                        <p>Rua 25 de Março, Brás - São Paulo, SP</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">📞 Telefone:</span>
+                        <p>(11) 3000-0000</p>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">⏰ Horário:</span>
+                        <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Brás App. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
