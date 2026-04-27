@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -175,6 +175,56 @@
             opacity: 0.8;
         }
 
+        /* Quick Download Section */
+        .quick-download {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .quick-download-content h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .quick-download-content p {
+            font-size: 1em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+        }
+
+        .btn-quick-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: white;
+            color: #764ba2;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-quick-download:hover {
+            transform: scale(1.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-quick-download:active {
+            transform: scale(0.95);
+        }
+
         /* Info Section */
         .info {
             background-color: #f8f9fa;
@@ -266,6 +316,20 @@
             .btn-download {
                 width: 100%;
             }
+
+            .quick-download {
+                padding: 20px 15px;
+                margin-bottom: 20px;
+            }
+
+            .quick-download-content h2 {
+                font-size: 1.5em;
+            }
+
+            .btn-quick-download {
+                width: 100%;
+                padding: 12px 30px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -307,6 +371,18 @@
 
         <!-- Main Content -->
         <main class="main-content">
+            <!-- Quick Download Section -->
+            <section class="quick-download">
+                <div class="quick-download-content">
+                    <h2>⬇️ Baixar Agora</h2>
+                    <p>Disponível apenas para Android</p>
+                    <a href="https://play.google.com/store" class="btn-quick-download" target="_blank">
+                        <span class="android-icon">🤖</span>
+                        Baixar no Google Play
+                    </a>
+                </div>
+            </section>
+
             <!-- Hero Section -->
             <section class="hero">
                 <div class="hero-content">
